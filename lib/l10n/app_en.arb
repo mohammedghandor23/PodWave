@@ -1,0 +1,53 @@
+{
+  "@@locale": "en",
+  "appName": "PodWave",
+  "home": "Home",
+  "library": "Library",
+  "settings": "Settings",
+  "yourMusicOffline": "Your music, offline.",
+  "nowPlaying": "Now Playing",
+  "queue": "Queue",
+  "songs": "Songs",
+  "albums": "Albums",
+  "artists": "Artists",
+  "playlists": "Playlists",
+  "search": "Search",
+  "searchInLibrary": "Search songs...",
+  "recentlyPlayed": "Recently Played",
+  "mostPlayed": "Most Played",
+  "recentlyAdded": "Recently Added",
+  "favorites": "Favorites",
+  "folderNotFound": "Folder not found",
+  "noSongsInFolder": "No songs in this folder",
+  "noAlbumsFound": "No albums found",
+  "noSongsFound": "No songs found",
+  "noResultsFound": "No results found",
+  "error": "Error",
+  "refresh": "Refresh",
+  "songCount": "{count} {count, plural, one{song} other{songs}}",
+  "customizeYourAuditoryExperience": "Customize your auditory experience.",
+  "playback": "Playback",
+  "resumePlayback": "Resume Playback",
+  "autoPlayWhenAppOpens": "Auto-play when app opens",
+  "resumeModePrompt": "Ask to resume",
+  "resumeModePromptDesc": "Show dialog when resuming songs",
+  "resumeModeAuto": "Auto resume",
+  "resumeModeAutoDesc": "Automatically resume from saved position",
+  "system": "System",
+  "localStorage": "Local Storage",
+  "appVersion": "App Version",
+  "resumeDialogTitle": "Resume Playback?",
+  "resumeDialogMessage": "You stopped at {position}. Resume from there?",
+  "@resumeDialogMessage": {
+    "placeholders": {
+      "position": {
+        "type": "String"
+      }
+    }
+  },
+  "resume": "Resume",
+  "startOver": "Start Over",
+  "language": "Language",
+  "english": "English",
+  "arabic": "Arabic"
+}

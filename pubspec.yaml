@@ -1,0 +1,49 @@
+name: podwave
+description: "PodWave"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.8.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_screenutil: ^5.9.3
+  google_fonts: ^6.2.1
+  persistent_bottom_nav_bar_v2: ^6.3.2
+  permission_handler: ^11.3.1
+  path_provider: ^2.1.3
+  just_audio: ^0.9.42
+  flutter_local_notifications: ^22.0.1
+  rxdart: ^0.28.0
+  id3: ^1.0.2
+  flutter_launcher_icons: ^0.14.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.13
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/logo.png"

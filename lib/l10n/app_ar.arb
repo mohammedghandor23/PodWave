@@ -1,0 +1,53 @@
+{
+  "@@locale": "ar",
+  "appName": "PodWave",
+  "home": "الرئيسية",
+  "library": "المكتبة",
+  "settings": "الإعدادات",
+  "yourMusicOffline": "موسيقاك، بدون إنترنت.",
+  "nowPlaying": "المشغل الآن",
+  "queue": "قائمة الانتظار",
+  "songs": "الأغاني",
+  "albums": "الألبومات",
+  "artists": "الفنانون",
+  "playlists": "قوائم التشغيل",
+  "search": "بحث",
+  "searchInLibrary": "ابحث عن أغاني...",
+  "recentlyPlayed": "شغلت مؤخراً",
+  "mostPlayed": "الأكثر تشغيلاً",
+  "recentlyAdded": "أضيف مؤخراً",
+  "favorites": "المفضلة",
+  "folderNotFound": "المجلد غير موجود",
+  "noSongsInFolder": "لا توجد أغاني في هذا المجلد",
+  "noAlbumsFound": "لا توجد ألبومات",
+  "noSongsFound": "لا توجد أغاني",
+  "noResultsFound": "لا توجد نتائج",
+  "error": "خطأ",
+  "refresh": "تحديث",
+  "songCount": "{count} {count, plural, one{أغنية} other{أغنية}}",
+  "customizeYourAuditoryExperience": "خصص تجربتك السمعية.",
+  "playback": "التشغيل",
+  "resumePlayback": "استئناف التشغيل",
+  "autoPlayWhenAppOpens": "تشغيل تلقائي عند فتح التطبيق",
+  "resumeModePrompt": "السؤال للاستئناف",
+  "resumeModePromptDesc": "عرض حوار عند استئناف الأغاني",
+  "resumeModeAuto": "استئناف تلقائي",
+  "resumeModeAutoDesc": "الاستئناف تلقائياً من الموضع المحفوظ",
+  "system": "النظام",
+  "localStorage": "التخزين المحلي",
+  "appVersion": "إصدار التطبيق",
+  "resumeDialogTitle": "استئناف التشغيل؟",
+  "resumeDialogMessage": "توقفت عند {position}. الاستئناف من هناك؟",
+  "@resumeDialogMessage": {
+    "placeholders": {
+      "position": {
+        "type": "String"
+      }
+    }
+  },
+  "resume": "استئناف",
+  "startOver": "البداية من جديد",
+  "language": "اللغة",
+  "english": "الإنجليزية",
+  "arabic": "العربية"
+}
