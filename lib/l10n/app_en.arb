@@ -49,5 +49,28 @@
   "startOver": "Start Over",
   "language": "Language",
   "english": "English",
-  "arabic": "Arabic"
+  "arabic": "Arabic",
+  "newPlaylist": "New Playlist",
+  "createPlaylist": "Create Playlist",
+  "playlistName": "Playlist name",
+  "playlistNameHint": "My Playlist",
+  "create": "Create",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "rename": "Rename",
+  "addSongs": "Add Songs",
+  "noPlaylists": "No playlists yet",
+  "noSongsInPlaylist": "No songs in this playlist",
+  "emptyPlaylist": "This playlist is empty",
+  "addSongsToPlaylist": "Add songs to this playlist",
+  "done": "Done",
+  "deletePlaylistConfirm": "Delete this playlist?",
+  "songsSelected": "{count} selected",
+  "@songsSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

@@ -170,7 +170,7 @@ abstract class AppLocalizations {
   /// No description provided for @searchInLibrary.
   ///
   /// In en, this message translates to:
-  /// **'Find in Library'**
+  /// **'Search songs...'**
   String get searchInLibrary;
 
   /// No description provided for @recentlyPlayed.
@@ -321,7 +321,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'You stopped at {position}. Resume from there?'**
-  String resumeDialogMessage(Object position);
+  String resumeDialogMessage(String position);
 
   /// No description provided for @resume.
   ///
@@ -352,6 +352,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Arabic'**
   String get arabic;
+
+  /// No description provided for @newPlaylist.
+  ///
+  /// In en, this message translates to:
+  /// **'New Playlist'**
+  String get newPlaylist;
+
+  /// No description provided for @createPlaylist.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Playlist'**
+  String get createPlaylist;
+
+  /// No description provided for @playlistName.
+  ///
+  /// In en, this message translates to:
+  /// **'Playlist name'**
+  String get playlistName;
+
+  /// No description provided for @playlistNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'My Playlist'**
+  String get playlistNameHint;
+
+  /// No description provided for @create.
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get create;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @rename.
+  ///
+  /// In en, this message translates to:
+  /// **'Rename'**
+  String get rename;
+
+  /// No description provided for @addSongs.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Songs'**
+  String get addSongs;
+
+  /// No description provided for @noPlaylists.
+  ///
+  /// In en, this message translates to:
+  /// **'No playlists yet'**
+  String get noPlaylists;
+
+  /// No description provided for @noSongsInPlaylist.
+  ///
+  /// In en, this message translates to:
+  /// **'No songs in this playlist'**
+  String get noSongsInPlaylist;
+
+  /// No description provided for @emptyPlaylist.
+  ///
+  /// In en, this message translates to:
+  /// **'This playlist is empty'**
+  String get emptyPlaylist;
+
+  /// No description provided for @addSongsToPlaylist.
+  ///
+  /// In en, this message translates to:
+  /// **'Add songs to this playlist'**
+  String get addSongsToPlaylist;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @deletePlaylistConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this playlist?'**
+  String get deletePlaylistConfirm;
+
+  /// No description provided for @songsSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} selected'**
+  String songsSelected(int count);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

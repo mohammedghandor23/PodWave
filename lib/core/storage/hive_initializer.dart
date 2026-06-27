@@ -1,6 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:podwave/features/library/data/models/song_model.dart';
 import 'package:podwave/features/library/data/models/album_model.dart';
+import 'package:podwave/features/playlists/data/models/playlist_model.dart';
 
 /// Centralized Hive initialization and box management.
 ///
@@ -46,6 +47,9 @@ class HiveInitializer {
     if (!Hive.isAdapterRegistered(2)) {
       Hive.registerAdapter(AlbumModelAdapter());
     }
+    if (!Hive.isAdapterRegistered(3)) {
+      Hive.registerAdapter(PlaylistModelAdapter());
+    }
   }
 
   /// Opens all required Hive boxes.
@@ -55,7 +59,7 @@ class HiveInitializer {
     await Hive.openBox<dynamic>(HiveBoxNames.settings);
     await Hive.openBox<dynamic>(HiveBoxNames.playbackPositions);
     await Hive.openBox<dynamic>(HiveBoxNames.library);
-    await Hive.openBox<dynamic>(HiveBoxNames.playlists);
+    await Hive.openBox<PlaylistModel>(HiveBoxNames.playlists);
     await Hive.openBox<dynamic>(HiveBoxNames.queue);
   }
 

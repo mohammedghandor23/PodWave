@@ -37,6 +37,7 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
@@ -50,7 +51,7 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
               backgroundColor: AppColors.surface,
               child: CustomScrollView(
                 slivers: [
-                  const NovaAppBar(),
+                  NovaAppBar(title: l10n.library),
                   SliverToBoxAdapter(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,10 +149,14 @@ class _LibraryContent extends ConsumerWidget {
 
         switch (filter) {
           case LibraryFilter.recentlyPlayed:
-            final recentSongs = repository.getRecentlyPlayedSongs();
-            final recentList = recentSongs.isEmpty ? songs.take(10).toList() : recentSongs;
+            final recentSongs = repository.getRecentlyPlayedSongs(limit: songs.length);
+            if (recentSongs.isEmpty) {
+              return const SliverFillRemaining(
+                child: _EmptyFilterState(),
+              );
+            }
             return _SongList(
-              songs: recentList,
+              songs: recentSongs,
               onSongTap: (song, list) => onSongTapped(song, list),
             );
           case LibraryFilter.songs:
@@ -160,19 +165,20 @@ class _LibraryContent extends ConsumerWidget {
               onSongTap: (song, list) => onSongTapped(song, list),
             );
           case LibraryFilter.mostPlayed:
-            final mostPlayedSongs = repository.getMostPlayedSongs();
-            final mostPlayedList = mostPlayedSongs.isEmpty
-                ? (List<SongModel>.from(songs)..sort((a, b) => b.playCount.compareTo(a.playCount))).take(20).toList()
-                : mostPlayedSongs;
+            final mostPlayedSongs = repository.getMostPlayedSongs(limit: songs.length);
+            if (mostPlayedSongs.isEmpty) {
+              return const SliverFillRemaining(
+                child: _EmptyFilterState(),
+              );
+            }
             return _SongList(
-              songs: mostPlayedList,
+              songs: mostPlayedSongs,
               onSongTap: (song, list) => onSongTapped(song, list),
             );
           case LibraryFilter.lastAdded:
             final lastAddedSongs = repository.getRecentlyAddedSongs(limit: songs.length);
-            final lastAddedList = lastAddedSongs.isEmpty ? songs : lastAddedSongs;
             return _SongList(
-              songs: lastAddedList,
+              songs: lastAddedSongs,
               onSongTap: (song, list) => onSongTapped(song, list),
             );
         }
@@ -275,6 +281,42 @@ class _EmptyLibraryState extends StatelessWidget {
             onPressed: onRefresh,
             icon: const Icon(Icons.refresh),
             label: Text(l10n.refresh),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _EmptyFilterState extends StatelessWidget {
+  const _EmptyFilterState();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.history,
+            size: 64,
+            color: AppColors.textSecondary,
+          ),
+          SizedBox(height: AppSpacing.md),
+          Text(
+            l10n.noSongsFound,
+            style: AppTextStyles.titleMedium.copyWith(
+              color: AppColors.textSecondary,
+            ),
+          ),
+          SizedBox(height: AppSpacing.sm),
+          Text(
+            'Play some songs to see them here',
+            style: AppTextStyles.bodySmall.copyWith(
+              color: AppColors.textSecondary,
+            ),
           ),
         ],
       ),

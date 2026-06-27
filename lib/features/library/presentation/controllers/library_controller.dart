@@ -4,8 +4,8 @@ import 'package:podwave/features/library/data/models/album_model.dart';
 import 'package:podwave/features/library/data/repositories/library_repository.dart';
 
 final libraryRepositoryProvider = Provider<LibraryRepository>((ref) {
-  return LibraryRepository();
-});
+  return LibraryRepository.instance;
+}, name: 'libraryRepository');
 
 final librarySongsProvider = FutureProvider<List<SongModel>>((ref) async {
   final repository = ref.watch(libraryRepositoryProvider);

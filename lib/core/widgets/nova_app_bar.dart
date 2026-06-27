@@ -3,10 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:podwave/core/constants/app_spacing.dart';
 import 'package:podwave/core/theme/app_colors.dart';
 import 'package:podwave/core/theme/app_text_styles.dart';
-import 'package:podwave/l10n/app_localizations.dart';
 
 class NovaAppBar extends StatelessWidget {
-  const NovaAppBar({super.key});
+  final String title;
+
+  const NovaAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +21,24 @@ class NovaAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              AppLocalizations.of(context)!.appName,
+              title,
               style: AppTextStyles.headlineSmall,
             ),
-            
+            Container(
+              width: 40.w,
+              height: 40.w,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.surface,
+                border: Border.all(color: AppColors.border, width: 1.5),
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/logo.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
           ],
         ),
       ),

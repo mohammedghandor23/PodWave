@@ -4,6 +4,8 @@ import 'package:podwave/features/folder_details/presentation/screens/folder_deta
 import 'package:podwave/features/navigation/presentation/screens/navigation_scaffold.dart';
 import 'package:podwave/features/library/data/models/song_model.dart';
 import 'package:podwave/features/now_playing/presentation/screens/now_playing_screen.dart';
+import 'package:podwave/features/playlists/data/models/playlist_model.dart';
+import 'package:podwave/features/playlists/presentation/screens/playlist_detail_screen.dart';
 import 'package:podwave/features/queue/presentation/screens/queue_screen.dart';
 import 'package:podwave/features/splash/presentation/screens/splash_screen.dart';
 
@@ -12,6 +14,7 @@ abstract final class AppRoutes {
   static const String home = '/home';
   static const String library = '/library';
   static const String settings = '/settings';
+  static const String playlistDetail = '/playlist-detail';
   static const String nowPlaying = '/now-playing';
   static const String queue = '/queue';
   static const String folderDetails = '/folder-details';
@@ -54,6 +57,14 @@ final GoRouter appRouter = GoRouter(
           builder: (context, state) => const SizedBox.shrink(),
         ),
       ],
+    ),
+    GoRoute(
+      parentNavigatorKey: rootNavigatorKey,
+      path: AppRoutes.playlistDetail,
+      name: 'playlist-detail',
+      builder: (context, state) => PlaylistDetailScreen(
+        playlist: state.extra as PlaylistModel,
+      ),
     ),
     GoRoute(
       parentNavigatorKey: rootNavigatorKey,

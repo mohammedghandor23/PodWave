@@ -9,11 +9,16 @@ class LibraryRepository {
   static const String _albumsBoxName = 'library_albums';
   static const String _cacheKey = 'last_scan_timestamp';
 
+  static LibraryRepository? _instance;
+  static LibraryRepository get instance => _instance ??= LibraryRepository._();
+
   final AudioQueryService _audioQueryService = AudioQueryService();
 
   Box<SongModel>? _songsBox;
   Box<AlbumModel>? _albumsBox;
   Box<dynamic>? _metadataBox;
+
+  LibraryRepository._();
 
   Future<void> initialize() async {
     if (!Hive.isAdapterRegistered(1)) {

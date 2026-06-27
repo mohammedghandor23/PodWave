@@ -22,7 +22,7 @@ class SettingsScreen extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            const NovaAppBar(),
+            NovaAppBar(title: l10n.settings),
             SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.all(AppSpacing.lg),
@@ -146,6 +146,7 @@ class _PlaybackSection extends ConsumerWidget {
                     Navigator.pop(context);
                   },
                 ),
+                 SizedBox(height: 74.h),
               ],
             ),
           ),
@@ -193,7 +194,7 @@ class _SystemSection extends ConsumerWidget {
               _SettingsTile(
                 icon: Icons.info_outline_rounded,
                 title: l10n.appVersion,
-                subtitle: 'PodWave v1.0.0 (Build 100)',
+                subtitle: 'PodWave v1.1.0',
               ),
             ],
           ),

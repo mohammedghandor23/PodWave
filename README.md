@@ -6,12 +6,11 @@ A modern, offline-first music player built with Flutter. Designed for simplicity
 
 - **Offline Music Playback**: Play your local music files without an internet connection
 - **Multi-Format Support**: MP3, AAC/M4A, WAV, OGG
-- **Media Notifications**: Control playback from notification center
+- **Media Notifications**: Control playback from notification center(its not working on release mode now)
 - **Queue Management**: Create and manage playback queues
 - **Library Organization**: Browse and organize your music library
 - **Folder Navigation**: Navigate through device folders to find music
 - **Bilingual Support**: Arabic and English localization
-- **Dark & Light Themes**: Beautiful dark-first design with light mode option
 - **Responsive Design**: Optimized for various screen sizes
 - **Playback Position Memory**: Resume from where you left off
 
@@ -189,4 +188,4 @@ This project is licensed under the MIT License.
 
 - Flutter team for the amazing framework
 - Riverpod community for the state management solution
-- All open-source contributors whose packages make this project possible# PodWave
+- All open-source contributors whose packages make this project possible

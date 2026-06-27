@@ -49,5 +49,28 @@
   "startOver": "البداية من جديد",
   "language": "اللغة",
   "english": "الإنجليزية",
-  "arabic": "العربية"
+  "arabic": "العربية",
+  "newPlaylist": "قائمة جديدة",
+  "createPlaylist": "إنشاء قائمة تشغيل",
+  "playlistName": "اسم القائمة",
+  "playlistNameHint": "قائمتي",
+  "create": "إنشاء",
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "rename": "إعادة تسمية",
+  "addSongs": "إضافة أغاني",
+  "noPlaylists": "لا توجد قوائم بعد",
+  "noSongsInPlaylist": "لا توجد أغاني في هذه القائمة",
+  "emptyPlaylist": "هذه القائمة فارغة",
+  "addSongsToPlaylist": "أضف أغاني إلى هذه القائمة",
+  "done": "تم",
+  "deletePlaylistConfirm": "حذف هذه القائمة؟",
+  "songsSelected": "{count} محدد",
+  "@songsSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

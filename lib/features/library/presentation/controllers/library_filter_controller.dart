@@ -12,7 +12,7 @@ final libraryFilterControllerProvider = StateNotifierProvider<LibraryFilterContr
 );
 
 class LibraryFilterController extends StateNotifier<LibraryFilter> {
-  LibraryFilterController() : super(LibraryFilter.recentlyPlayed);
+  LibraryFilterController() : super(LibraryFilter.songs);
 
   void setFilter(LibraryFilter filter) {
     state = filter;

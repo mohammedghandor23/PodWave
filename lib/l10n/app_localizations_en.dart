@@ -45,7 +45,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get search => 'Search';
 
   @override
-  String get searchInLibrary => 'Find in Library';
+  String get searchInLibrary => 'Search songs...';
 
   @override
   String get recentlyPlayed => 'Recently Played';
@@ -128,7 +128,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resumeDialogTitle => 'Resume Playback?';
 
   @override
-  String resumeDialogMessage(Object position) {
+  String resumeDialogMessage(String position) {
     return 'You stopped at $position. Resume from there?';
   }
 
@@ -146,4 +146,54 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get arabic => 'Arabic';
+
+  @override
+  String get newPlaylist => 'New Playlist';
+
+  @override
+  String get createPlaylist => 'Create Playlist';
+
+  @override
+  String get playlistName => 'Playlist name';
+
+  @override
+  String get playlistNameHint => 'My Playlist';
+
+  @override
+  String get create => 'Create';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get rename => 'Rename';
+
+  @override
+  String get addSongs => 'Add Songs';
+
+  @override
+  String get noPlaylists => 'No playlists yet';
+
+  @override
+  String get noSongsInPlaylist => 'No songs in this playlist';
+
+  @override
+  String get emptyPlaylist => 'This playlist is empty';
+
+  @override
+  String get addSongsToPlaylist => 'Add songs to this playlist';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get deletePlaylistConfirm => 'Delete this playlist?';
+
+  @override
+  String songsSelected(int count) {
+    return '$count selected';
+  }
 }

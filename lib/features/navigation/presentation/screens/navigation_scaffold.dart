@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
+import 'package:podwave/core/constants/app_spacing.dart';
 import 'package:podwave/core/theme/app_colors.dart';
 import 'package:podwave/core/widgets/mini_player_bar.dart';
-import 'package:podwave/features/home/presentation/screens/home_screen.dart';
 import 'package:podwave/features/library/presentation/screens/library_screen.dart';
+import 'package:podwave/features/playlists/presentation/screens/playlists_screen.dart';
 import 'package:podwave/features/navigation/presentation/controllers/navigation_controller.dart';
 import 'package:podwave/features/settings/presentation/screens/settings_screen.dart';
 import 'package:podwave/l10n/app_localizations.dart';
@@ -22,7 +24,7 @@ class _NavigationScaffoldState extends ConsumerState<NavigationScaffold> {
   @override
   void initState() {
     super.initState();
-    _tabController = PersistentTabController(initialIndex: 0);
+    _tabController = PersistentTabController(initialIndex: 1);
   }
 
   @override
@@ -35,32 +37,38 @@ class _NavigationScaffoldState extends ConsumerState<NavigationScaffold> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
+    final tabIcons = [
+      Icons.queue_music_rounded,
+      Icons.library_music_rounded,
+      Icons.settings_rounded,
+    ];
+
     final tabs = [
       PersistentTabConfig(
-        screen: const HomeScreen(),
+        screen: const PlaylistsScreen(),
         item: ItemConfig(
-          icon: const Icon(Icons.home_rounded, color: AppColors.primary),
-          title: l10n.home,
-          activeColorSecondary: AppColors.primary.withValues(alpha: 0.2),
+          icon: const Icon(Icons.queue_music_rounded),
+          title: l10n.playlists,
           activeForegroundColor: AppColors.primary,
+          inactiveForegroundColor: AppColors.disabled,
         ),
       ),
       PersistentTabConfig(
         screen: const LibraryScreen(),
         item: ItemConfig(
-          icon: const Icon(Icons.library_music_rounded, color: AppColors.primary),
+          icon: const Icon(Icons.library_music_rounded),
           title: l10n.library,
-          activeColorSecondary: AppColors.primary.withValues(alpha: 0.2),
           activeForegroundColor: AppColors.primary,
+          inactiveForegroundColor: AppColors.disabled,
         ),
       ),
       PersistentTabConfig(
         screen: const SettingsScreen(),
         item: ItemConfig(
-          icon: const Icon(Icons.settings_rounded, color: AppColors.primary),
+          icon: const Icon(Icons.settings_rounded),
           title: l10n.settings,
-          activeColorSecondary: AppColors.primary.withValues(alpha: 0.2),
           activeForegroundColor: AppColors.primary,
+          inactiveForegroundColor: AppColors.disabled,
         ),
       ),
     ];
@@ -70,13 +78,9 @@ class _NavigationScaffoldState extends ConsumerState<NavigationScaffold> {
         PersistentTabView(
           tabs: tabs,
           controller: _tabController,
-          navBarBuilder: (navBarConfig) => Style2BottomNavBar(
+          navBarBuilder: (navBarConfig) => _IconOnlyNavBar(
             navBarConfig: navBarConfig,
-            navBarDecoration: NavBarDecoration(
-              color: AppColors.surface,
-              borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: AppColors.border),
-            ),
+            icons: tabIcons,
           ),
           backgroundColor: AppColors.background,
           onTabChanged: (index) {
@@ -87,10 +91,66 @@ class _NavigationScaffoldState extends ConsumerState<NavigationScaffold> {
         Positioned(
           left: 0,
           right: 0,
-          bottom: 50,
+          bottom: 80,
           child: const MiniPlayerBar(),
         ),
       ],
+    );
+  }
+}
+
+class _IconOnlyNavBar extends StatelessWidget {
+  final NavBarConfig navBarConfig;
+  final List<IconData> icons;
+
+  const _IconOnlyNavBar({
+    required this.navBarConfig,
+    required this.icons,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 64.h,
+      margin: EdgeInsets.symmetric(
+        horizontal: AppSpacing.xl,
+        vertical: AppSpacing.md,
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: AppColors.border),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: List.generate(navBarConfig.items.length, (index) {
+          final isActive = index == navBarConfig.selectedIndex;
+          return GestureDetector(
+            onTap: () => navBarConfig.onItemSelected(index),
+            behavior: HitTestBehavior.opaque,
+            child: SizedBox(
+              width: 56.w,
+              child: Center(
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  padding: EdgeInsets.all(AppSpacing.sm),
+                  decoration: BoxDecoration(
+                    color: isActive
+                        ? AppColors.primary.withValues(alpha: 0.15)
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Icon(
+                    icons[index],
+                    color: isActive ? AppColors.primary : AppColors.disabled,
+                    size: 24.sp,
+                  ),
+                ),
+              ),
+            ),
+          );
+        }),
+      ),
     );
   }
 }

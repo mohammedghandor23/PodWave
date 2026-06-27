@@ -45,7 +45,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get search => 'بحث';
 
   @override
-  String get searchInLibrary => 'البحث في المكتبة';
+  String get searchInLibrary => 'ابحث عن أغاني...';
 
   @override
   String get recentlyPlayed => 'شغلت مؤخراً';
@@ -128,7 +128,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get resumeDialogTitle => 'استئناف التشغيل؟';
 
   @override
-  String resumeDialogMessage(Object position) {
+  String resumeDialogMessage(String position) {
     return 'توقفت عند $position. الاستئناف من هناك؟';
   }
 
@@ -146,4 +146,54 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get arabic => 'العربية';
+
+  @override
+  String get newPlaylist => 'قائمة جديدة';
+
+  @override
+  String get createPlaylist => 'إنشاء قائمة تشغيل';
+
+  @override
+  String get playlistName => 'اسم القائمة';
+
+  @override
+  String get playlistNameHint => 'قائمتي';
+
+  @override
+  String get create => 'إنشاء';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get rename => 'إعادة تسمية';
+
+  @override
+  String get addSongs => 'إضافة أغاني';
+
+  @override
+  String get noPlaylists => 'لا توجد قوائم بعد';
+
+  @override
+  String get noSongsInPlaylist => 'لا توجد أغاني في هذه القائمة';
+
+  @override
+  String get emptyPlaylist => 'هذه القائمة فارغة';
+
+  @override
+  String get addSongsToPlaylist => 'أضف أغاني إلى هذه القائمة';
+
+  @override
+  String get done => 'تم';
+
+  @override
+  String get deletePlaylistConfirm => 'حذف هذه القائمة؟';
+
+  @override
+  String songsSelected(int count) {
+    return '$count محدد';
+  }
 }

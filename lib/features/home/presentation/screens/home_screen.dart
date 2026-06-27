@@ -82,7 +82,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           backgroundColor: AppColors.surface,
           child: CustomScrollView(
             slivers: [
-              const NovaAppBar(),
+              NovaAppBar(title: l10n.home),
               libraryState.when(
                 data: (songs) => _HomeContent(
                   songs: songs,
